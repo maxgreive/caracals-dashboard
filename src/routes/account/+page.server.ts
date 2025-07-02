@@ -38,5 +38,34 @@ export const actions = {
 				return updatedUser;
 			}
 		}
+	},
+	/**
+	 * Update action for user profile
+	 */
+	update: async ({ locals, request }) => {
+		const formData = await request.formData();
+		const { user } = await locals.safeGetSession();
+
+		if (user) {
+			const updates: Record<string, any> = {};
+			for (const [key, value] of formData.entries()) {
+				if (typeof value === 'string' && value.trim() !== '') {
+					// Convert jersey_number to number if present
+					if (key === 'jersey_number') {
+						const num = Number(value);
+						if (!isNaN(num)) {
+							updates[key] = num;
+						}
+					} else {
+						updates[key] = value;
+					}
+				}
+			}
+
+			if (Object.keys(updates).length > 0) {
+				const updatedUser = await UserDatabase.update(user.id, updates);
+				return updatedUser;
+			}
+		}
 	}
 } satisfies Actions;

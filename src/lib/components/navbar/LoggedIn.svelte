@@ -1,7 +1,5 @@
 <script lang="ts">
 	// Variables
-	import { PUBLIC_SUPABASE_STORAGE_ENDPOINT } from '$env/static/public';
-
 	export let profileImage: string | undefined;
 </script>
 

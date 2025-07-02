@@ -28,6 +28,10 @@ function createUserStore() {
 			return user?.profile_image;
 		},
 
+		get jersey_number() {
+			return user?.jersey_number;
+		},
+
 		set,
 		reset
 	};
