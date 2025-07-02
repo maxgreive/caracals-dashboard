@@ -1,21 +1,20 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-@layer components {
-	.std-input-label {
-		@apply block text-sm font-medium text-left;
-	}
+@plugin "daisyui" {
+	themes: light --default, night --prefersdark;
+}
 
-	.std-input-error {
-		@apply text-sm text-error;
-	}
+.sun-icon,
+.moon-icon {
+	font-size: 0.8rem;
+}
 
-	.std-input-field {
-		@apply w-full px-4 py-2 border rounded-md;
-	}
+.sun-icon:before {
+	/* Unicode character for sun */
+	content: '\1F31E';
+}
 
-	.std-input-button {
-		@apply rounded-md btn focus:outline-none btn-primary;
-	}
+.moon-icon:before {
+	/* Unicode character for crescent moon */
+	content: '\1F319';
 }

@@ -14,3 +14,17 @@ export const supabaseServerClient = createClient(
 		}
 	}
 );
+
+
+export async function getProfileImageUrl(path: string): Promise<string | null> {
+  const { data, error } = await supabaseServerClient
+    .storage
+    .from('profile-images')
+    .createSignedUrl(path, 60 * 60); // 1 hour expiry
+
+  if (error) {
+    console.error(error);
+    return null;
+  }
+  return data.signedUrl;
+}

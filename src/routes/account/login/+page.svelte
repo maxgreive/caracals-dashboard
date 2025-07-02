@@ -63,7 +63,7 @@
 					type="email"
 					placeholder="Email"
 					name="email"
-					class="std-input-field"
+					class="w-full px-4 py-2 border rounded-md"
 					on:keydown={handleKeyboardInput}
 					bind:value={email}
 				/>
@@ -75,18 +75,18 @@
 					type="password"
 					placeholder="Password"
 					name="password"
-					class="std-input-field"
+					class="w-full px-4 py-2 border rounded-md"
 					on:keydown={handleKeyboardInput}
 					bind:value={password}
 				/>
 			</div>
 
 			<div class="flex justify-center mt-2">
-				<p class="std-input-error">{error}</p>
+				<p class="text-sm text-error">{error}</p>
 			</div>
 
 			<div class="flex justify-center mt-1">
-				<button class="px-6 py-2 leading-5 std-input-button">Login</button>
+				<button class="px-6 py-2 leading-5 rounded-md btn focus:outline-none btn-primary">Login</button>
 			</div>
 		</form>
 

@@ -10,8 +10,8 @@
 	 */
 	import { onMount } from 'svelte';
 
-	const dark = 'synthwave';
-	const light = 'cupcake';
+	const dark = 'night';
+	const light = 'light';
 
 	let currentTheme = light;
 
@@ -25,7 +25,7 @@
 			currentTheme = light;
 		}
 		document.documentElement.setAttribute('data-theme', currentTheme);
-		document.cookie = `currentTheme=${currentTheme};max-age=31356000;path="/"`;
+		document.cookie = `currentTheme=${currentTheme};max-age=31356000;path=/`;
 	}
 
 	/**
@@ -60,7 +60,9 @@
 
 <div class="flex items-center justify-center p-4">
 	<button
-		class="relative flex items-center p-1 transition-colors duration-300 ease-in-out bg-gray-700 rounded-full w-14 h-7"
+		class="relative flex items-center p-1 transition-colors duration-300 ease-in-out rounded-full w-14 h-7"
+		class:bg-gray-300={currentTheme !== dark}
+		class:bg-gray-700={currentTheme === dark}
 		on:click={toggleTheme}
 		aria-label="Toggle theme"
 	>
@@ -75,24 +77,8 @@
 			{#if currentTheme === dark}
 				<div class="text-white dark:text-black moon-icon"></div>
 			{:else}
-				<div class="sun-icon"></div>
+				<div class="text-white sun-icon"></div>
 			{/if}
 		</div>
 	</button>
 </div>
-
-<style>
-	.sun-icon:before {
-		content: '\2600'; /* Unicode character for sun */
-		font-size: 0.8rem;
-		display: block;
-		text-align: center;
-	}
-	.moon-icon:before {
-		content: '\1F319'; /* Unicode character for crescent moon */
-		color: white !important;
-		font-size: 0.8rem;
-		display: block;
-		text-align: center;
-	}
-</style>

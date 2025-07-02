@@ -6,13 +6,13 @@
 </script>
 
 <div class="dropdown dropdown-end">
-	<div tabindex="0" role="button" class="btn btn-ghost btn-circle profileImage">
+	<div tabindex="0" role="button" class="btn btn-ghost profileImage">
 		<div class="w-12 h-12 overflow-hidden rounded-full">
 			{#if profileImage}
 				<img
 					class="object-cover w-full h-full border-4 rounded-full border-primary"
 					alt="Account profileImage and menu"
-					src="{PUBLIC_SUPABASE_STORAGE_ENDPOINT}/profile_images/{profileImage}"
+					src={ profileImage }
 				/>
 			{:else}
 				<div class="flex items-center justify-center w-full h-full rounded-full bg-primary"></div>

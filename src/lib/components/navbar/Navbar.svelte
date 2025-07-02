@@ -4,20 +4,22 @@
 	import LoggedOut from './LoggedOut.svelte';
 	import ToggleLightDarkMode from './ToggleLightDarkMode.svelte';
 
+	export let profileImage: string;
+
 	// Variables
 	import { userStore } from '$lib/stores/user.svelte';
 </script>
 
 <div class="navbar">
-	<div class="flex-1">
-		<a href="/" class="text-xl btn btn-ghost">Template</a>
+	<div class="flex items-center justify-between w-full">
+		<a href="/" class="text-xl btn btn-ghost">Caracals Dashboard</a>
 		<div class="flex-none">
 			<ToggleLightDarkMode></ToggleLightDarkMode>
 		</div>
 	</div>
 
 	{#if userStore.exists}
-		<LoggedIn profileImage={userStore.profile_image}></LoggedIn>
+		<LoggedIn {profileImage}></LoggedIn>
 	{:else}
 		<LoggedOut></LoggedOut>
 	{/if}

@@ -51,7 +51,7 @@
 							<img
 								class="object-cover w-full h-full rounded-full"
 								alt="Avatar"
-								src="{PUBLIC_SUPABASE_STORAGE_ENDPOINT}/profile_images/{userStore.profile_image}"
+								src="{PUBLIC_SUPABASE_STORAGE_ENDPOINT}/profile-images/{userStore.profile_image}"
 								role="none"
 							/>
 						</div>

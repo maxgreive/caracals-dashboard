@@ -58,59 +58,59 @@
 			on:submit|preventDefault={handleSubmit}
 		>
 			<div>
-				<label for="username" class="mb-1 std-input-label">Username</label>
+				<label for="username" class="mb-1 block text-sm font-medium text-left">Username</label>
 				<input
 					type="text"
 					placeholder="Username"
 					name="username"
-					class="std-input-field"
+					class="w-full px-4 py-2 border rounded-md"
 					bind:value={username}
 				/>
-				<p class="mt-1 std-input-error">{errors?.username || ''}</p>
+				<p class="mt-1 text-sm text-error">{errors?.username || ''}</p>
 			</div>
 
 			<div>
-				<label for="email" class="mb-1 std-input-label">Email</label>
+				<label for="email" class="mb-1 block text-sm font-medium text-left">Email</label>
 				<input
 					type="email"
 					placeholder="Email"
 					name="email"
-					class="std-input-field"
+					class="w-full px-4 py-2 border rounded-md"
 					bind:value={email}
 				/>
-				<p class="mt-1 std-input-error">{errors?.email || ''}</p>
+				<p class="mt-1 text-sm text-error">{errors?.email || ''}</p>
 			</div>
 
 			<div>
-				<label for="password" class="mb-1 std-input-label">Password</label>
+				<label for="password" class="mb-1 block text-sm font-medium text-left">Password</label>
 				<input
 					type="password"
 					placeholder="Password"
 					name="password"
-					class="std-input-field"
+					class="w-full px-4 py-2 border rounded-md"
 					bind:value={password}
 				/>
-				<p class="mt-1 std-input-error">{''}</p>
+				<p class="mt-1 text-sm text-error">{''}</p>
 			</div>
 
 			<div>
-				<label for="passwordConfirm" class="mb-1 std-input-label">Password confirmation</label>
+				<label for="passwordConfirm" class="mb-1 block text-sm font-medium text-left">Password confirmation</label>
 				<input
 					type="password"
 					placeholder="Confirm Password"
 					name="passwordConfirm"
-					class="std-input-field"
+					class="w-full px-4 py-2 border rounded-md"
 					bind:value={confirmPassword}
 				/>
-				<p class="mt-1 std-input-error">{errors?.password || ''}</p>
+				<p class="mt-1 text-sm text-error">{errors?.password || ''}</p>
 			</div>
 
 			<div>
-				<p class="mt-1 text-center std-input-error">{errors?.other || ''}</p>
+				<p class="mt-1 text-center text-sm text-error">{errors?.other || ''}</p>
 			</div>
 
 			<div class="flex justify-center mt-4">
-				<button class="px-6 py-2 leading-5 std-input-button">Register</button>
+				<button class="px-6 py-2 leading-5 rounded-md btn focus:outline-none btn-primary">Register</button>
 			</div>
 		</form>
 
