@@ -29,7 +29,6 @@
 		"eslint-plugin-svelte": "^2.36.0",
 		"globals": "^15.0.0",
 		"postcss": "^8.4.38",
-		"postcss-lab-function": "^7.0.10",
 		"prettier": "^3.1.1",
 		"prettier-plugin-svelte": "^3.1.2",
 		"supabase": "^2.26.9",
