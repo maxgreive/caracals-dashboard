@@ -12,7 +12,6 @@ import type { PageServerLoad } from './$types';
 export const load: PageServerLoad = async ({ params }) => {
   const tournamentId = params.id;
   const tournament = await TournamentDatabase.getById(tournamentId);
-  console.log('tournament:', tournament)
 
   if (tournament == null) {
     return {
@@ -20,7 +19,6 @@ export const load: PageServerLoad = async ({ params }) => {
     };
   }
 
-  console.log("UserDatabase.getById(tournament.user ?? ''):", await UserDatabase.getById(tournament.user ?? ''))
   return {
     tournament: tournament as Tables<'tournaments'>,
     user: await UserDatabase.getById(tournament.user ?? '')
