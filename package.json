@@ -11,6 +11,11 @@
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write ."
 	},
+	"browserslist": [
+		"last 2 versions",
+		"not dead",
+		"> 0.2%"
+	],
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/kit": "^2.0.0",
